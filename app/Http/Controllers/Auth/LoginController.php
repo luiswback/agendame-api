@@ -8,14 +8,16 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Resources\User\UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
 {
     /**
      * @throws InvalidAuthenticationException
      */
-    public function __invoke(LoginRequest $request): string|UserResource
+    public function __invoke(LoginRequest $request): UserResource
     {
+        Log::debug('aqui');
         $input = $request->validated();
 
         if (!Auth::attempt($input)) {
