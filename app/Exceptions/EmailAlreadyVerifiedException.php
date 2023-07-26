@@ -5,15 +5,15 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Http\JsonResponse;
 
-class InvalidAuthenticationException extends Exception
+class EmailAlreadyVerifiedException extends Exception
 {
-    protected $message = 'Credentials don\'t match.';
+    protected $message = 'Email already verified.';
 
     public function render(): JsonResponse
     {
         return response()->json([
             'error' => class_basename($this),
             'message' => $this->getMessage(),
-        ], 401);
+        ], 400);
     }
 }
