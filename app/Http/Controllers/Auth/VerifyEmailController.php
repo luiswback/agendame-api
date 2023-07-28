@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Exceptions\EmailAlreadyVerifiedException;
 use App\Exceptions\TokenInvalidException;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\VerifyEmailRequest;
+use App\Http\Requests\Auth\Auth\Auth\VerifyEmailRequest;
 use App\Http\Resources\User\UserResource;
 use App\Models\User;
 use Carbon\Carbon;
